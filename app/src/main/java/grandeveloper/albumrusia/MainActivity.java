@@ -24,10 +24,14 @@ public class MainActivity extends AppCompatActivity {
             public void onMenuTabSelected(@IdRes int menuItemId) {
                 if (menuItemId == R.id.bb_home) {
                     // The user selected item number one.
+
                 }
 
                 if (menuItemId == R.id.bb_album) {
                     // The user selected item number one.
+                    AlbumFragment f = new AlbumFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
+
                 }
 
                 if (menuItemId == R.id.bb_avance) {
