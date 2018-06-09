@@ -24,6 +24,7 @@
             android:name=".MainActivity"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".Compras"></activity>
+
     </application>
 
 </manifest>

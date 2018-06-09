@@ -11,14 +11,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
-public class AlbumFragment extends Fragment {
+public class AlbumFragment3 extends Fragment {
     @Nullable
 
     private LinearLayout l1;
-    private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,btn1;
+    private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,btn1,btn2;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_album,container,false);
+        View v = inflater.inflate(R.layout.fragment_album2,container,false);
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         l1 = (LinearLayout) v.findViewById(R.id.ll1);
         iv1 = (ImageView)v.findViewById(R.id.image1);
@@ -30,16 +30,26 @@ public class AlbumFragment extends Fragment {
         iv7 = (ImageView)v.findViewById(R.id.image7);
         iv8 = (ImageView)v.findViewById(R.id.image8);
         btn1 = (ImageView)v.findViewById(R.id.btnadelante);
+        btn2 = (ImageView)v.findViewById(R.id.btnatras);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlbumFragment4 f = new AlbumFragment4();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 AlbumFragment2 f = new AlbumFragment2();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame,f).commit();
-
             }
         });
         conn.close();
+
         return v;
     }
 }
