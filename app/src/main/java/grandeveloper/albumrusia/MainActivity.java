@@ -1,5 +1,6 @@
 package grandeveloper.albumrusia;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
@@ -14,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
 
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
                 if (menuItemId == R.id.bb_home) {
+
                     // The user selected item number one.
 
                 }
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (menuItemId == R.id.bb_comprar) {
                     // The user selected item number one.
+                    CompraFragment compra = new CompraFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,compra).commit();
+
                 }
 
                 if (menuItemId == R.id.bb_compartir) {

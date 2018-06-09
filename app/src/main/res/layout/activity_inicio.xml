@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     android:orientation="vertical"
-    tools:context=".Inicio"
-    android:background="@drawable/fondo">
+    tools:context=".Inicio">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="253dp"
-        android:layout_height="209dp"
+        android:layout_width="297dp"
+        android:layout_height="238dp"
         android:layout_gravity="center"
         android:src="@drawable/logo_fifa" />
 
     <TextView
         android:id="@+id/vers"
         android:layout_width="106dp"
-        android:layout_height="71dp"
+        android:layout_height="66dp"
         android:layout_gravity="center"
         android:text="@string/version"
         android:textColor="@android:color/background_light"
@@ -25,16 +25,19 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="180dp"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tituCreador"
             android:layout_marginLeft="40dp"
-            android:textColor="@android:color/background_light" />
+            android:text="@string/tituCreador"
+            android:textColor="@android:color/background_light"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/name1"
@@ -42,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:text="@string/creador1"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/name2"
@@ -50,7 +54,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:text="@string/creador2"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="@string/creador3"
+            android:textColor="@android:color/background_light"
+            android:textSize="10sp" />
 
     </LinearLayout>
 
