@@ -1,12 +1,15 @@
 package grandeveloper.albumrusia;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,25 +29,59 @@ import java.util.List;
 public class CompraFragment extends Fragment {
     private Button btn;
     private RequestQueue mqueue;
-    List<String> lsId = new ArrayList<>();
+    private TextView tv;
+    List<String> lsId;
+    private Integer contador=5;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_compra, container, false);
         btn =(Button)v.findViewById(R.id.btnPaq);
         mqueue = Volley.newRequestQueue(getActivity().getBaseContext());
+        jsonParse();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jsonParse();
+                if(contador==0){
+                    Toast.makeText(getActivity().getBaseContext(), "Agotaste tus intentos\n Intenta mas tarde", Toast.LENGTH_LONG).show();
+                }else {
+                contador--;
                 Intent intent = new Intent(getActivity(), Compras.class);
+                for (int i=0;i<5;i++){
+                intent.putExtra("str"+i,lsId.get(i));
+                }
                 getActivity().startActivity(intent);
+                }
             }
         });
 
         return v;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
+        contador = data.getInt("contador",5);
+        tv = (TextView)getActivity().findViewById(R.id.tvComp);
+        tv.setGravity(1);
+        tv.setText("\n" + contador);
+        lsId = new ArrayList<>();
+        //Toast.makeText(getActivity().getBaseContext(), "entro onResume", Toast.LENGTH_LONG).show();
+        jsonParse();
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
+        SharedPreferences.Editor miEditor = data.edit();
+        miEditor.putInt("contador",contador);
+        miEditor.commit();
+    }
+
     private void jsonParse(){
         String url = "http://serverbpw.com/cm/cards.php?type=json";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
