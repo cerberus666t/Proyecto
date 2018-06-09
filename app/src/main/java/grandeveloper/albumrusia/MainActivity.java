@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 if (menuItemId == R.id.bb_home) {
 
                     // The user selected item number one.
+                    HomeFragment hm = new HomeFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,hm).commit();
 
                 }
 

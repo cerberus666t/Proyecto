@@ -31,7 +31,7 @@ public class CompraFragment extends Fragment {
     private RequestQueue mqueue;
     private TextView tv;
     List<String> lsId;
-    private Integer contador=5;
+    public Integer contador=10;
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class CompraFragment extends Fragment {
     public void onResume() {
         super.onResume();
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
-        contador = data.getInt("contador",5);
+        contador = data.getInt("contador",10);
         tv = (TextView)getActivity().findViewById(R.id.tvComp);
         tv.setGravity(1);
         tv.setText("\n" + contador);
