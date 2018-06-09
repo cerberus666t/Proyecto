@@ -12,7 +12,7 @@ import java.util.List;
 public class Compras extends AppCompatActivity {
 
     List<Integer> lstcards = new ArrayList<>();
-    List<String> lsId = new ArrayList<>();
+    List<String> idCards = new ArrayList<>();
     HorizontalInfiniteCycleViewPager infCy;
 
     @Override
@@ -21,21 +21,26 @@ public class Compras extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_compras);
         CompraFragment comp = new CompraFragment();
-        lsId = comp.lsId;
-
+        String aux = "";
+        for (int i = 0; i < 5; i++){
+            aux = getIntent().getStringExtra("str" + i);
+            idCards.add(aux);
+        }
         initData();
         infCy = (HorizontalInfiniteCycleViewPager)findViewById(R.id.horizontal_cycle);
         AdaptadorCard adaptadorCard = new AdaptadorCard(lstcards,getBaseContext());
         infCy.setAdapter(adaptadorCard);
+
+
     }
     private void initData(){
-        lstcards.add(R.drawable.id1);
+       /* lstcards.add(R.drawable.id1);
         lstcards.add(R.drawable.id2);
         lstcards.add(R.drawable.id3);
         lstcards.add(R.drawable.id4);
-        lstcards.add(R.drawable.id5);
-       /* for (int i = 0;i < lsId.size();i++){
-            String aux = lsId.get(i);
+        lstcards.add(R.drawable.id5);*/
+        for (int i = 0;i < idCards.size();i++){
+            String aux = idCards.get(i);
             switch (aux){
                 case "1":
                     lstcards.add(R.drawable.id1);
@@ -188,7 +193,7 @@ public class Compras extends AppCompatActivity {
                     lstcards.add(R.drawable.id50);
                     break;
             }
-        }*/
+        }
 
 
 
