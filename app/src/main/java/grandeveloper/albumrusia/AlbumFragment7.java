@@ -19,6 +19,7 @@ public class AlbumFragment7 extends Fragment {
     private LinearLayout l1;
     private ImageView iv1,iv2,btn1;
     int i;
+    CargaImagen cargaImagen;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class AlbumFragment7 extends Fragment {
         iv1 = (ImageView)v.findViewById(R.id.image1);
         iv2 = (ImageView)v.findViewById(R.id.image2);
         btn1 = (ImageView)v.findViewById(R.id.btnatras);
+        cargaImagen = new CargaImagen();
 
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         SQLiteDatabase bd = conn.getWritableDatabase();
@@ -37,17 +39,19 @@ public class AlbumFragment7 extends Fragment {
 
             if(i==49){
                 if (c.getInt(0)>=0 ){
-                    iv1.setBackgroundResource(R.drawable.id49);
+                    iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id49,200,200));
                 }
             }
 
             else if(i==50){
                 if (c.getInt(0)>=0 ){
-                    iv2.setBackgroundResource(R.drawable.id50);
+                    iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id50,200,200));
                 }
             }
 
         }
+        conn.close();
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override

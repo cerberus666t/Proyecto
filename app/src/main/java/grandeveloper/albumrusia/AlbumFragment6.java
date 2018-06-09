@@ -19,6 +19,7 @@ public class AlbumFragment6 extends Fragment {
     private LinearLayout l1;
     private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,btn1,btn2;
     int i;
+    CargaImagen cargaImagen;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class AlbumFragment6 extends Fragment {
         iv8 = (ImageView)v.findViewById(R.id.image8);
         btn1 = (ImageView)v.findViewById(R.id.btnadelante);
         btn2 = (ImageView)v.findViewById(R.id.btnatras);
+        cargaImagen = new CargaImagen();
 
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         SQLiteDatabase bd = conn.getWritableDatabase();
@@ -44,55 +46,55 @@ public class AlbumFragment6 extends Fragment {
 
             if(i==41){
                 if (c.getInt(0)>=0 ){
-                    iv1.setBackgroundResource(R.drawable.id41);
+                    iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id41,200,200));
                 }
             }
 
             else if(i==42){
                 if (c.getInt(0)>=0 ){
-                    iv2.setBackgroundResource(R.drawable.id42);
+                    iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id42,200,200));
                 }
             }
 
             else if(i==43){
                 if (c.getInt(0)>=0 ){
-                    iv3.setBackgroundResource(R.drawable.id43);
+                    iv3.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id43,200,200));
                 }
             }
 
             else if(i==44){
                 if (c.getInt(0)>=0 ){
-                    iv4.setBackgroundResource(R.drawable.id44);
+                    iv4.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id44,200,200));
                 }
             }
 
             else if(i==45){
                 if (c.getInt(0)>=0 ){
-                    iv5.setBackgroundResource(R.drawable.id45);
+                    iv5.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id45,200,200));
                 }
             }
 
             else if(i==46){
                 if (c.getInt(0)>=0 ){
-                    iv6.setBackgroundResource(R.drawable.id46);
+                    iv6.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id46,200,200));
                 }
             }
 
             else if(i==47){
                 if (c.getInt(0)>=0 ){
-                    iv7.setBackgroundResource(R.drawable.id47);
+                    iv7.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id47,200,200));
                 }
             }
 
             else if(i==48){
                 if (c.getInt(0)>=0 ){
-                    iv8.setBackgroundResource(R.drawable.id48);
+                    iv8.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id48,200,200));
                 }
             }
 
         }
 
-
+        conn.close();
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +111,6 @@ public class AlbumFragment6 extends Fragment {
             }
         });
 
-        conn.close();
         return v;
     }
 }
