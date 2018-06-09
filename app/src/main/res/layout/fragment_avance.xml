@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="305dp"
+    android:background="@drawable/fondo4_3"
+    tools:context=".AvanceFragment">
+
+    <TextView
+        android:layout_width="412dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="107dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Tus tarjetas"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="570dp"
+        android:layout_height="299dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:stretchColumns="*">
+
+        <View
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/t1"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t5"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t6"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t7"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t8"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t9"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t10"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <View
+
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/t12"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t13"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="13"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t11"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="11"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t14"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="14"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t15"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="15"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t16"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="16"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t17"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="17"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t18"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="18"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t19"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="19"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t20"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="20"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <View
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/t21"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="21"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t22"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="22"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t23"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="23"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t24"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="24"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t25"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="25"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t26"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="26"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t27"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="27"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t28"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="28"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t29"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="29"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t30"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="30"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/t31"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="31"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t32"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="32"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t33"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="33"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t34"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="34"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t35"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="35"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t38"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="38"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t36"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="36"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t37"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="37"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t39"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="39"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t40"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="40"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <View
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/t42"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="42"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t41"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="41"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t45"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="45"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t43"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="43"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t44"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="44"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t46"
+                android:layout_width="fill_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="46"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t47"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="47"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t48"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="48"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t49"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="49"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t50"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="50"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dp"
+            android:background="@android:color/background_light" />
+
+    </TableLayout>
+
+</FrameLayout>
