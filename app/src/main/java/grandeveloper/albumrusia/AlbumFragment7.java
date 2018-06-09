@@ -1,5 +1,7 @@
 package grandeveloper.albumrusia;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,22 +17,37 @@ public class AlbumFragment7 extends Fragment {
     @Nullable
 
     private LinearLayout l1;
-    private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,btn1;
+    private ImageView iv1,iv2,btn1;
+    int i;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_album7,container,false);
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         l1 = (LinearLayout) v.findViewById(R.id.ll1);
         iv1 = (ImageView)v.findViewById(R.id.image1);
         iv2 = (ImageView)v.findViewById(R.id.image2);
-        iv3 = (ImageView)v.findViewById(R.id.image3);
-        iv4 = (ImageView)v.findViewById(R.id.image4);
-        iv5 = (ImageView)v.findViewById(R.id.image5);
-        iv6 = (ImageView)v.findViewById(R.id.image6);
-        iv7 = (ImageView)v.findViewById(R.id.image7);
-        iv8 = (ImageView)v.findViewById(R.id.image8);
         btn1 = (ImageView)v.findViewById(R.id.btnatras);
 
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
+        SQLiteDatabase bd = conn.getWritableDatabase();
+
+        for(i=49;i<51;i++){
+            Cursor c=bd.rawQuery("SELECT inventario FROM jugadores WHERE id ='"+i+"'",null);
+            c.moveToFirst();
+
+            if(i==49){
+                if (c.getInt(0)>=0 ){
+                    iv1.setBackgroundResource(R.drawable.id49);
+                }
+            }
+
+            else if(i==50){
+                if (c.getInt(0)>=0 ){
+                    iv2.setBackgroundResource(R.drawable.id50);
+                }
+            }
+
+        }
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
