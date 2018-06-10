@@ -24,8 +24,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".Compras" />
-        <activity android:name=".VistaCarta"></activity>
+        <activity android:name=".Compras"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".VistaCarta">
+            android:screenOrientation="landscape"
+        </activity>
     </application>
 
 </manifest>
