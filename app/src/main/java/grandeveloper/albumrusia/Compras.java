@@ -1,6 +1,7 @@
 package grandeveloper.albumrusia;
 
 import android.content.pm.ActivityInfo;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -21,11 +22,29 @@ public class Compras extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_compras);
         CompraFragment comp = new CompraFragment();
+        //para la base
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this,"bd_jugadores",null,1);
+        SQLiteDatabase bd = conn.getWritableDatabase();
+        SQLiteDatabase bd1 = conn.getReadableDatabase();
+        //recupera info de fragment
         String aux = "";
         for (int i = 0; i < 5; i++){
             aux = getIntent().getStringExtra("str" + i);
             idCards.add(aux);
         }
+        //guarda en base de datos
+        /*for (int i= 0;i<5;i++) {
+            Cursor c = bd.rawQuery("SELECT inventario FROM jugadores WHERE id ='" + Integer.parseInt(idCards.get(i)) + "'", null);
+            c.moveToFirst();
+            int contAux = c.getInt(0);
+
+            ContentValues values = new ContentValues();
+            values.put("inventario",String.valueOf(contAux+1));
+            String[] sel = {idCards.get(i)};
+            int co = bd1.update("jugadores",values," LIKE ?",sel);
+        }
+        conn.close();
+        */
         initData();
         infCy = (HorizontalInfiniteCycleViewPager)findViewById(R.id.horizontal_cycle);
         AdaptadorCard adaptadorCard = new AdaptadorCard(lstcards,getBaseContext());

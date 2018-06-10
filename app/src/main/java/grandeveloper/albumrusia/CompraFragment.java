@@ -68,7 +68,7 @@ public class CompraFragment extends Fragment {
         tv.setGravity(1);
         tv.setText("\n" + contador);
         lsId = new ArrayList<>();
-        //Toast.makeText(getActivity().getBaseContext(), "entro onResume", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity().getBaseContext(), "Da click sobre el número", Toast.LENGTH_LONG).show();
         jsonParse();
 
     }
@@ -106,7 +106,7 @@ public class CompraFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getActivity().getBaseContext(),"Error ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getBaseContext(),"Error de conexón", Toast.LENGTH_LONG).show();
             }
         });
         mqueue.add(request);
