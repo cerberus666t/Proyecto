@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
                 //Intent intent = new Intent(getActivity(), VideoActivity.class);
                 try {
                     Uri uri = Uri.parse(url.get(cont2));
-                    if (cont2>4) cont2 = 0;
+                    if (cont2 == 4) cont2 = 0;
                     else cont2++;
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     getActivity().startActivity(intent);
