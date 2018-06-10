@@ -1,5 +1,6 @@
 package grandeveloper.albumrusia;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -47,48 +48,152 @@ public class AlbumFragment4 extends Fragment {
             if(i==25){
                 if (c.getInt(0)>=0 ){
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id25,200,200));
+                    iv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id25);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==26){
                 if (c.getInt(0)>=0 ){
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id26,200,200));
+                    iv2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id26);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==27){
                 if (c.getInt(0)>=0 ){
                     iv3.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id27,200,200));
+                    iv3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id27);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv3.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==28){
                 if (c.getInt(0)>=0 ){
                     iv4.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id28,200,200));
+                    iv4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id28);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv4.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==29){
                 if (c.getInt(0)>=0 ){
                     iv5.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id29,200,200));
+                    iv5.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id29);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv5.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==30){
                 if (c.getInt(0)>=0 ){
                     iv6.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id30,200,200));
+                    iv6.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id30);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv6.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==31){
                 if (c.getInt(0)>=0 ){
                     iv7.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id31,200,200));
+                    iv7.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id31);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv7.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==32){
                 if (c.getInt(0)>=0 ){
                     iv8.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id32,200,200));
+                    iv8.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id32);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv8.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
