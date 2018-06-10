@@ -65,6 +65,17 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="50sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvConsejo"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
