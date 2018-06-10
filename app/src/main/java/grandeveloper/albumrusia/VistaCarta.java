@@ -1,7 +1,9 @@
 package grandeveloper.albumrusia;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class VistaCarta extends AppCompatActivity {
@@ -19,8 +21,8 @@ public class VistaCarta extends AppCompatActivity {
 
         cargaImagen = new CargaImagen();
         iv = (ImageView) findViewById(R.id.imageview);
-
         iv.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),recurso,300,300));
-
+        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.cartazoom);
+        iv.startAnimation(anim);
     }
 }
