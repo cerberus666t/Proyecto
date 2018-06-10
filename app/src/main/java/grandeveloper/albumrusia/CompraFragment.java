@@ -59,8 +59,9 @@ public class CompraFragment extends Fragment {
                         }
                     }); builder.show();
                 }else {
-                contador--;
+
                 try {
+                    contador--;
                     Intent intent = new Intent(getActivity(), Compras.class);
                     for (int i=0;i<5;i++){
                         intent.putExtra("str"+i,lsId.get(i));
