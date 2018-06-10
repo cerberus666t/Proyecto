@@ -1,5 +1,6 @@
 package grandeveloper.albumrusia;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -40,12 +41,38 @@ public class AlbumFragment7 extends Fragment {
             if(i==49){
                 if (c.getInt(0)>=0 ){
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id49,200,200));
+                    iv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id49);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
             else if(i==50){
                 if (c.getInt(0)>=0 ){
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id50,200,200));
+                    iv2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("RESOURCE",R.drawable.id50);
+                            Intent intent = new Intent(getActivity(), VistaCarta.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                else{
+                    iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
                 }
             }
 
