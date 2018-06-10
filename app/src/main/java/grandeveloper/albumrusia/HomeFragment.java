@@ -51,11 +51,19 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 //Intent intent = new Intent(getActivity(), VideoActivity.class);
                 try {
-                    Uri uri = Uri.parse(url.get(cont2));
-                    if (cont2 == 4) cont2 = 0;
-                    else cont2++;
-                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                    getActivity().startActivity(intent);
+
+                    if (cont2 == 3) {
+                        cont2 = 0;
+                        Uri uri = Uri.parse(url.get(cont2));
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        getActivity().startActivity(intent);
+                    }else{
+                        cont2++;
+                        Uri uri = Uri.parse(url.get(cont2));
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        getActivity().startActivity(intent);
+                    }
+
                 }catch ( Exception e){
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setMessage("Verifique que tiene Youtube instalado");
