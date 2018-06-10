@@ -43,7 +43,7 @@ public class AlbumFragment extends Fragment {
             c.moveToFirst();
 
             if(i==1){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id1,200,200));
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -62,7 +62,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==2){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id2,200,200));
                     iv2.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -81,7 +81,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==3){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv3.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id3,200,200));
                     iv3.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -100,7 +100,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==4){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv4.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id4,200,200));
                     iv4.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -119,7 +119,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==5){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv5.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id5,200,200));
                     iv5.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -138,7 +138,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==6){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv6.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id6,200,200));
                     iv6.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -157,7 +157,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==7){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv7.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id7,200,200));
                     iv7.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -175,7 +175,7 @@ public class AlbumFragment extends Fragment {
             }
 
             else if(i==8){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv8.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id8,200,200));
                     iv8.setOnClickListener(new View.OnClickListener() {
                         @Override

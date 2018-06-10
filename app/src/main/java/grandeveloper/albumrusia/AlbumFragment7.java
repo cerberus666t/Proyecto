@@ -39,7 +39,7 @@ public class AlbumFragment7 extends Fragment {
             c.moveToFirst();
 
             if(i==49){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id49,200,200));
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -58,7 +58,7 @@ public class AlbumFragment7 extends Fragment {
             }
 
             else if(i==50){
-                if (c.getInt(0)>=0 ){
+                if (c.getInt(0)>=1 ){
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.id50,200,200));
                     iv2.setOnClickListener(new View.OnClickListener() {
                         @Override
