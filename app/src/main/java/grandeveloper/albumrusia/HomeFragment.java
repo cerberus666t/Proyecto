@@ -1,6 +1,10 @@
 package grandeveloper.albumrusia;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
@@ -9,7 +13,9 @@ import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 
 public class HomeFragment extends Fragment {
 
@@ -55,6 +61,7 @@ public class HomeFragment extends Fragment {
                     countDown.setText(DateUtils.formatElapsedTime(0));
 
                     cf.contador = 10;
+                    countDown.setTextSize(24);
                     countDown.setText("Ahora puedes seguir comprando");
                 }
 
@@ -64,6 +71,30 @@ public class HomeFragment extends Fragment {
             countDown.setText("Te quedan "+cf.contador+" intentos de compra");
         }*/
 
+        ImageView imVid = (ImageView) v.findViewById(R.id.imVid);
+        imVid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(getActivity(), VideoActivity.class);
+                try {
+                    Uri uri = Uri.parse("https://www.youtube.com/watch?v=0B_Lu-Im408");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    getActivity().startActivity(intent);
+                }catch ( Exception e){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("Verifique que tiene Youtube instalado");
+                    builder.setTitle("¡La acción falló!");
+                    builder.setCancelable(false);
+                    builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    }); builder.show();
+                }
+
+            }
+        });
 
         return v;
     }
@@ -82,6 +113,9 @@ public class HomeFragment extends Fragment {
         SharedPreferences.Editor miEditor = data.edit();
         miEditor.putInt("contador",cf.contador);
         miEditor.commit();
+
     }
+
+
 
 }
