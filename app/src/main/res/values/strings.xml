@@ -20,6 +20,9 @@
     <string name="item5">Intercambiar</string>
     <string name="item6">Volver</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="permission_granted">Ahora ya puedes escanear</string>
+    <string name="permission_rejected">Debes aceptar los permisos para continuar</string>
+    <string name="intercambiar">Intercambiar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

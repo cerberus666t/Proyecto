@@ -49,6 +49,7 @@ public class AlbumFragment extends Fragment {
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         SQLiteDatabase bd = conn.getWritableDatabase();
 
+
         cargaImagen = new CargaImagen();
         for(i=1;i<9;i++){
             Cursor c=bd.rawQuery("SELECT inventario FROM jugadores WHERE id ='"+i+"'",null);
