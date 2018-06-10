@@ -1,5 +1,7 @@
 package grandeveloper.albumrusia;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,20 +39,47 @@ public class CompraFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_compra, container, false);
         btn =(Button)v.findViewById(R.id.btnPaq);
-        mqueue = Volley.newRequestQueue(getActivity().getBaseContext());
-        jsonParse();
+
+
+       // Toast.makeText(getActivity().getBaseContext(), "entro en onCreateView", Toast.LENGTH_LONG).show();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(contador==0){
-                    Toast.makeText(getActivity().getBaseContext(), "Agotaste tus intentos\n Intenta mas tarde", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity().getBaseContext(), "Agotaste tus intentos\n Intenta mas tarde", Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("Solo tienes un máximo de 10 intentos de compra, puedes volver a comprar despúes del tiempo asignado o compartir tus tarjetas repetidas con tus amigos.");
+                    builder.setTitle("¡Agotaste tus intentos!");
+                    builder.setCancelable(false);
+                    builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    }); builder.show();
                 }else {
                 contador--;
-                Intent intent = new Intent(getActivity(), Compras.class);
-                for (int i=0;i<5;i++){
-                intent.putExtra("str"+i,lsId.get(i));
+                try {
+                    Intent intent = new Intent(getActivity(), Compras.class);
+                    for (int i=0;i<5;i++){
+                        intent.putExtra("str"+i,lsId.get(i));
+                    }
+                    getActivity().startActivity(intent);
+                }catch (Exception e){
+                    //Toast.makeText(getActivity().getBaseContext(), "Error al obtener tarjetas", Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("No es posible obtener las tarjetas, por favor verifique la conexión a internet.");
+                    builder.setTitle("¡La acción falló!");
+                    builder.setCancelable(false);
+                    builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    }); builder.show();
                 }
-                getActivity().startActivity(intent);
+
                 }
             }
         });
@@ -59,17 +87,20 @@ public class CompraFragment extends Fragment {
         return v;
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
+        mqueue = Volley.newRequestQueue(getActivity().getBaseContext());
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
         contador = data.getInt("contador",10);
         tv = (TextView)getActivity().findViewById(R.id.tvComp);
         tv.setGravity(1);
         tv.setText("\n" + contador);
         lsId = new ArrayList<>();
-        Toast.makeText(getActivity().getBaseContext(), "Da click sobre el número", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity().getBaseContext(), "entro en onResume", Toast.LENGTH_LONG).show();
         jsonParse();
+
 
     }
 
@@ -98,7 +129,17 @@ public class CompraFragment extends Fragment {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(getActivity().getBaseContext(),"Error al obtener tarjetas", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getActivity().getBaseContext(),"Error al obtener tarjetas", Toast.LENGTH_LONG).show();
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                            builder.setMessage("No es posible conectarse con el servidor, verique que puede conectarse a internet.");
+                            builder.setTitle("¡Error con servidor!");
+                            builder.setCancelable(false);
+                            builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            }); builder.show();
                         }
 
                     }
@@ -106,7 +147,7 @@ public class CompraFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getActivity().getBaseContext(),"Error de conexón", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getBaseContext(),"Error de conexón", Toast.LENGTH_LONG).show();
             }
         });
         mqueue.add(request);

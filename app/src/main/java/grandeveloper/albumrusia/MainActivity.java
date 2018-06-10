@@ -91,6 +91,17 @@ public class MainActivity extends AppCompatActivity {
         mBottomBar.mapColorForTab(2, ContextCompat.getColor(this, R.color.barra3));
         mBottomBar.mapColorForTab(3, "#FF5252");
         mBottomBar.mapColorForTab(4, "#FF9800");
+        /*
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Para poder continuar ingresa tu nombre.");
+        builder.setTitle("¡Bienvedido!");
+        builder.setCancelable(false);
+        builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        }); builder.show();*/
     }
 
     @Override

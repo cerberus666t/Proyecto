@@ -1,5 +1,6 @@
 package grandeveloper.albumrusia;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -23,6 +24,15 @@ public class AvanceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Toast ts;
+        ts = Toast.makeText(getActivity().getBaseContext(), "Da click sobre el número", Toast.LENGTH_LONG);
+        ts.setGravity(Gravity.CENTER_VERTICAL,0,-250);
+        ts.show();
     }
 
     @Override
