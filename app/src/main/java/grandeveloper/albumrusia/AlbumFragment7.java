@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class AlbumFragment7 extends Fragment {
@@ -19,6 +20,8 @@ public class AlbumFragment7 extends Fragment {
 
     private LinearLayout l1;
     private ImageView iv1,iv2,btn1;
+    private TextView tx1,tx2;
+
     int i;
     CargaImagen cargaImagen;
 
@@ -30,6 +33,8 @@ public class AlbumFragment7 extends Fragment {
         iv2 = (ImageView)v.findViewById(R.id.image2);
         btn1 = (ImageView)v.findViewById(R.id.btnatras);
         cargaImagen = new CargaImagen();
+        tx1 = (TextView) v.findViewById(R.id.nombre1);
+        tx2 = (TextView) v.findViewById(R.id.nombre2);
 
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         SQLiteDatabase bd = conn.getWritableDatabase();
@@ -54,6 +59,8 @@ public class AlbumFragment7 extends Fragment {
                 }
                 else{
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx1.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx1.setText(R.string.id49);
                 }
             }
 
@@ -73,6 +80,8 @@ public class AlbumFragment7 extends Fragment {
                 }
                 else{
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx2.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx2.setText(R.string.id50);
                 }
             }
 

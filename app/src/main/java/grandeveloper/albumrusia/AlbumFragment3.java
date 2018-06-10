@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class AlbumFragment3 extends Fragment {
@@ -19,6 +20,7 @@ public class AlbumFragment3 extends Fragment {
 
     private LinearLayout l1;
     private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8,btn1,btn2;
+    private TextView tx1,tx2,tx3,tx4,tx5,tx6,tx7,tx8;
     int i;
     CargaImagen cargaImagen;
 
@@ -36,6 +38,14 @@ public class AlbumFragment3 extends Fragment {
         btn1 = (ImageView)v.findViewById(R.id.btnadelante);
         btn2 = (ImageView)v.findViewById(R.id.btnatras);
         cargaImagen = new CargaImagen();
+        tx1 = (TextView) v.findViewById(R.id.nombre1);
+        tx2 = (TextView) v.findViewById(R.id.nombre2);
+        tx3 = (TextView) v.findViewById(R.id.nombre3);
+        tx4 = (TextView) v.findViewById(R.id.nombre4);
+        tx5 = (TextView) v.findViewById(R.id.nombre5);
+        tx6 = (TextView) v.findViewById(R.id.nombre6);
+        tx7 = (TextView) v.findViewById(R.id.nombre7);
+        tx8 = (TextView) v.findViewById(R.id.nombre8);
 
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(),"bd_jugadores",null,1);
         SQLiteDatabase bd = conn.getWritableDatabase();
@@ -60,6 +70,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv1.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx1.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx1.setText(R.string.id17);
                 }
             }
 
@@ -79,6 +91,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv2.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx2.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx2.setText(R.string.id18);
                 }
             }
 
@@ -98,6 +112,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv3.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx3.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx3.setText(R.string.id19);
                 }
             }
 
@@ -117,6 +133,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv4.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx4.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx4.setText(R.string.id20);
                 }
             }
 
@@ -136,6 +154,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv5.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx5.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx5.setText(R.string.id21);
                 }
             }
 
@@ -155,6 +175,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv6.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx6.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx6.setText(R.string.id22);
                 }
             }
 
@@ -174,6 +196,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv7.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx7.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx7.setText(R.string.id23);
                 }
             }
 
@@ -193,6 +217,8 @@ public class AlbumFragment3 extends Fragment {
                 }
                 else{
                     iv8.setImageBitmap(cargaImagen.decodeSampledBitmapFromResource(getResources(),R.drawable.desconocido,200,200));
+                    tx8.setBackgroundColor(getResources().getColor(R.color.negro));
+                    tx8.setText(R.string.id24);
                 }
             }
 
