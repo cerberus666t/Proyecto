@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (menuItemId == R.id.bb_compartir) {
                     // The user selected item number one.
+                    CompartirFragment cf = new CompartirFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,cf).commit();
                 }
             }
 
