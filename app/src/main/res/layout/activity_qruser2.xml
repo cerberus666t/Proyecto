@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="305dp"
+    android:layout_height="match_parent"
     android:background="@drawable/fondo4_2"
-    tools:context=".QrFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".entidades.Qruser2Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +13,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/ivQR"
+            android:id="@+id/ivQR2"
             android:layout_width="match_parent"
             android:layout_height="246dp"
             android:src="@android:color/background_light" />
@@ -26,26 +24,29 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnRecibir"
+                android:id="@+id/btnRecibir2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_green_dark"
-                android:text="Recibir QR"
+                android:text="continuar"
                 android:textColor="@android:color/background_light" />
 
             <Button
-                android:id="@+id/btnCancel"
+                android:id="@+id/btnCancel2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:background="@android:color/holo_green_dark"
                 android:text="Cancelar"
                 android:textColor="@android:color/background_light" />
         </LinearLayout>
     </LinearLayout>
-</FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

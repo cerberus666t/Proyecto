@@ -15,16 +15,18 @@ import android.widget.Toast;
 
 import com.google.zxing.Result;
 
+import grandeveloper.albumrusia.entidades.Qruser2Activity;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class Escanear extends AppCompatActivity implements ZXingScannerView.ResultHandler {
-    public boolean inicio;
+    public boolean user;
     private ZXingScannerView mScannerView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_escanear);
+        user = getIntent().getBooleanExtra("user",true);
 
         if (ActivityCompat.checkSelfPermission(Escanear.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //Si el permiso no se encuentra concedido se solicita
@@ -45,29 +47,52 @@ public class Escanear extends AppCompatActivity implements ZXingScannerView.Resu
     public void handleResult(Result result) {
 
         //Esto se ejecuta una vez escaneado el codigo
-        inicio = true;
         Log.v("HandlerResult",result.getText());
         AlertDialog.Builder builder = new AlertDialog.Builder(Escanear.this);
-        builder.setMessage("Estas recibiendo: "+result.getText());//aqui manda lo que recibe
-        builder.setCancelable(false);
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-                Intent intent = new Intent(Escanear.this,MainActivity.class);
-                intent.putExtra("inicio",true);
-                Escanear.this.startActivity(intent);
+        if(user == true){
+            builder.setMessage("Estas recibiendo: "+result.getText());//aqui manda lo que recibe
+            builder.setCancelable(false);
+            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                    Intent intent = new Intent(Escanear.this,MainActivity.class);
+                    Escanear.this.startActivity(intent);
 
-            }
-        });
-        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-                Intent intent = new Intent(Escanear.this,ConfirmacionActivity.class);
-                Escanear.this.startActivity(intent);
-            }
-        }); builder.show();
+                }
+            });
+            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+                    Intent intent = new Intent(Escanear.this,ConfirmacionActivity.class);
+                    intent.putExtra("inicio",user);
+                    Escanear.this.startActivity(intent);
+                }
+            }); builder.show();
+        }else{
+            builder.setMessage("Estas recibiendo: "+result.getText());//aqui manda lo que recibe
+            builder.setCancelable(false);
+            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                    Intent intent = new Intent(Escanear.this,MainActivity.class);
+                    Escanear.this.startActivity(intent);
+
+                }
+            });
+            builder.setPositiveButton("Generar QR", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+                    Intent intent = new Intent(Escanear.this,Qruser2Activity.class);
+                    intent.putExtra("inicio",user);
+                    Escanear.this.startActivity(intent);
+                }
+            }); builder.show();
+        }
+
 
 
         //La instruccion de abajo es por si queremos seguir escaneando

@@ -35,17 +35,19 @@ public class Compartir extends AppCompatActivity {
     }
 
     private void displaylistView() {
+        int op = getIntent().getIntExtra("op",1);
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_jugadores", null, 1);
         SQLiteDatabase bd = conn.getWritableDatabase();
         ArrayList<Jugadores> jugadorList = new ArrayList<Jugadores>();
         Jugadores jugadores;
+
+        if(op ==1){
         for (int i = 1; i < 51; i++) {
             Cursor c = bd.rawQuery("SELECT nombre,inventario FROM jugadores WHERE id ='" + i + "'", null);
             c.moveToFirst();
             if (c.getInt(1) > 1) {
                 String idd = Integer.toString(i);
                 Integer numerod = c.getInt(1);
-                numerod = numerod-1;
                 String nombreC = c.getString(0);
                 String inventarioC = Integer.toString(numerod);
                 jugadores = new Jugadores(idd,nombreC, inventarioC, false);
@@ -63,6 +65,32 @@ public class Compartir extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Seleccionaste: " + jugador.getNombre(), Toast.LENGTH_SHORT);
             }
         });
+        }else{
+            for (int i = 1; i < 51; i++) {
+                Cursor c = bd.rawQuery("SELECT nombre,inventario FROM jugadores WHERE id ='" + i + "'", null);
+                c.moveToFirst();
+                if (c.getInt(1) == 0) {
+                    String idd = Integer.toString(i);
+                    Integer numerod = c.getInt(1);
+                    //numerod = numerod-1;
+                    String nombreC = c.getString(0);
+                    String inventarioC = Integer.toString(numerod);
+                    jugadores = new Jugadores(idd,nombreC, inventarioC, false);
+                    jugadorList.add(jugadores);
+                }
+            }
+
+            dataAdapter = new MyCustomAdapter(this, R.layout.list_view_item, jugadorList);
+            listView = (ListView) findViewById(R.id.listView1);
+            listView.setAdapter(dataAdapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                    Jugadores jugador = (Jugadores) parent.getItemAtPosition(position);
+                    Toast.makeText(getApplicationContext(), "Seleccionaste: " + jugador.getNombre(), Toast.LENGTH_SHORT);
+                }
+            });
+        }
     }
 
 
