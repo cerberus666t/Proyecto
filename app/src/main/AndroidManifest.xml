@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -21,24 +21,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".Compras"
             android:screenOrientation="landscape" />
-
-        <activity android:name=".VistaCarta">
-            android:screenOrientation="landscape"
-        </activity>
-
-        <activity android:name=".Escanear">
-
-        </activity>
+        <activity
+            android:name=".VistaCarta"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Escanear"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ConfirmacionActivity"></activity>
     </application>
 
 </manifest>
