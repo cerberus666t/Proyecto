@@ -31,8 +31,8 @@ public class HomeFragment extends Fragment {
     private long initialTime =
             DateUtils.DAY_IN_MILLIS * 0 +
                     DateUtils.HOUR_IN_MILLIS * 0 +
-                    DateUtils.MINUTE_IN_MILLIS * 1 +
-                    DateUtils.SECOND_IN_MILLIS * 10;
+                    DateUtils.MINUTE_IN_MILLIS * 2 +
+                    DateUtils.SECOND_IN_MILLIS * 0;
     CompraFragment cf = new CompraFragment();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
         SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
         cf.contador = data.getInt("contador",10);
         cont2 = data.getInt("contUrl",0);
-        initialTime = data.getLong("hora",DateUtils.HOUR_IN_MILLIS * 0 + DateUtils.MINUTE_IN_MILLIS * 1 + DateUtils.SECOND_IN_MILLIS * 10);
+        initialTime = data.getLong("hora",DateUtils.HOUR_IN_MILLIS * 0 + DateUtils.MINUTE_IN_MILLIS * 2 + DateUtils.SECOND_IN_MILLIS * 0);
 
         tv = (TextView)getActivity().findViewById(R.id.tvConsejo);
         countDown = (TextView)getActivity().findViewById(R.id.tvTime);
@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment {
                 countDown.setText(DateUtils.formatElapsedTime(0));
 
                 cf.contador = 10;
-                initialTime = DateUtils.HOUR_IN_MILLIS * 0 + DateUtils.MINUTE_IN_MILLIS * 1 + DateUtils.SECOND_IN_MILLIS * 10;
+                initialTime = DateUtils.HOUR_IN_MILLIS * 0 + DateUtils.MINUTE_IN_MILLIS * 2 + DateUtils.SECOND_IN_MILLIS * 0;
                 countDown.setTextSize(24);
                 countDown.setText("Ahora puedes seguir comprando");
             }
