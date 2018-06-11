@@ -39,6 +39,10 @@
         <activity android:name=".Escanear">
 
         </activity>
+
+        <activity android:name=".Compartir">
+
+        </activity>
     </application>
 
 </manifest>

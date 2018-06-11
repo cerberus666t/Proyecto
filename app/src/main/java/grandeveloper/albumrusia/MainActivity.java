@@ -1,5 +1,6 @@
 package grandeveloper.albumrusia;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -55,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (menuItemId == R.id.bb_compartir) {
                     // The user selected item number one.
-                    CompartirFragment cf = new CompartirFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,cf).commit();
+                    Intent intent = new Intent(MainActivity.this, Compartir.class);
+                    startActivity(intent);
+                    //CompartirFragment cf = new CompartirFragment();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.frame,cf).commit();
                 }
             }
 
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (menuItemId == R.id.bb_compartir) {
                     // The user reselected item number one, scroll your content to top.
+                    Intent intent = new Intent(MainActivity.this, Compartir.class);
+                    startActivity(intent);
                 }
             }
 

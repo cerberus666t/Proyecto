@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo4_2"
+        tools:context=".CompartirFragment"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:scrollbars="vertical"
+                >
+
+            </ListView>
+
+            <Button
+                android:id="@+id/btnCambiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/intercambiar"/>
+        </LinearLayout>
+
+
+</LinearLayout>
