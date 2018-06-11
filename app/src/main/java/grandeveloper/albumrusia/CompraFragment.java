@@ -52,7 +52,7 @@ public class CompraFragment extends Fragment {
                     builder.setMessage("Solo tienes un máximo de 10 intentos de compra, puedes volver a comprar despúes del tiempo asignado o compartir tus tarjetas repetidas con tus amigos.");
                     builder.setTitle("¡Agotaste tus intentos!");
                     builder.setCancelable(false);
-                    builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.cancel();
@@ -61,19 +61,19 @@ public class CompraFragment extends Fragment {
                 }else {
 
                 try {
-                    contador--;
                     Intent intent = new Intent(getActivity(), Compras.class);
                     for (int i=0;i<5;i++){
                         intent.putExtra("str"+i,lsId.get(i));
                     }
                     getActivity().startActivity(intent);
+                    contador--;
                 }catch (Exception e){
                     //Toast.makeText(getActivity().getBaseContext(), "Error al obtener tarjetas", Toast.LENGTH_LONG).show();
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setMessage("No es posible obtener las tarjetas, por favor verifique la conexión a internet.");
                     builder.setTitle("¡La acción falló!");
                     builder.setCancelable(false);
-                    builder.setNeutralButton("Aceptar", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int id) {
                                             dialog.cancel();

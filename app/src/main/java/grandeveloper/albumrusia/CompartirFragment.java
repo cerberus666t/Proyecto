@@ -1,16 +1,18 @@
 package grandeveloper.albumrusia;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
 
 
 public class CompartirFragment extends Fragment {
-
-
+    private Button empezar;
+    private String interCards="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,39 @@ public class CompartirFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_compartir, container, false);
+        empezar = (Button)v.findViewById(R.id.btnEmp);
 
+        empezar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+               //String R = getResources().getIdentifier("id"+1, "strings", getActivity().getPackageName());
+                builder.setMessage("¿Desea intercambiar las tarjetas " + interCards +"?");
+                builder.setTitle("Intercambio");
+                builder.setCancelable(false);
+                builder.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+
+                        QrFragment qrf = new QrFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame,qrf).commit();
+                    }
+                });
+                builder.setPositiveButton("Recibir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }); builder.show();
+            }
+        });
 
 
         return v;
